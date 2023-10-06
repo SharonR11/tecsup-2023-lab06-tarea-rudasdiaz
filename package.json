@@ -1,0 +1,22 @@
+{
+  "name": "tecsup-2023-tarea-rudasdiaz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharonR11/tecsup-2023-lab06-tarea-rudasdiaz.git"
+  },
+  "author": "Sharon Rudas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SharonR11/tecsup-2023-lab06-tarea-rudasdiaz/issues"
+  },
+  "homepage": "https://github.com/SharonR11/tecsup-2023-lab06-tarea-rudasdiaz#readme",
+  "dependencies": {
+    "underscore": "^1.13.6"
+  }
+}
