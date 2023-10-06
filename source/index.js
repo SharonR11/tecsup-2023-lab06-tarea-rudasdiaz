@@ -1,25 +1,29 @@
-function Edad(fechaNacimiento) {
-    //obtener fecha actual
-    const actual = new Date();
-    const fechaNac = new Date(fechaNacimiento);
-    //restar año nacimiento - actual
-    //obtener edad
-    const edad = actual.getFullYear() - fechaNac.getFullYear();
-    //obtener mes actual y de nacimiento
-    const mesact = actual.getMonth();
-    const diaAct = actual.getDate();
-    const mesNac = fechaNac.getMonth();
-    const diaNac = fechaNac.getDate();
-    //verificar si aun no es su fecha de nacimiento 
-    //seria cumpleaños
-    if (mesact < mesNac || (mesact === mesNac && diaAct < diaNac)) {
-        //si aun no cumple edad, se restara 1
-        return edad -1; 
-    }
-    return edad;
-}
-//ingresar fecha 'año-mes-dia'
-const fechaNacimiento = '2000-05-15'
-const edad= Edad(fechaNacimiento);
-console.log(`La Edad es : ${edad} años` );
+const express = require('express')
+const port = 3500
+const app = express()
 
+__dirname ='./source/'
+
+app.get('/', async(req, res, next) =>{
+        res.sendFile('login.html',{root: __dirname+ 'public/'});
+    //res.send(__dirname+ 'public/')
+    })
+
+function validarFormulario() {
+    const nombre = document.querySelector('#nombre').value;
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+    const fechaNacimiento = document.querySelector('#fechaNacimiento').value;
+
+    if (!nombre) return alert('El campo Nombre es obligatorio.');
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) 
+    return alert('El correo electrónico no tiene un formato válido.');
+    if (!password) return alert('El campo Contraseña es obligatorio.');
+    if (!fechaNacimiento) return alert('El campo Fecha de Nacimiento es obligatorio.');
+
+    alert('Formulario enviado correctamente.');
+    return true;
+}
+
+app.listen(port)
+console.log(`Server on port ${port}`)

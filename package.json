@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SharonR11/tecsup-2023-lab06-tarea-rudasdiaz#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "underscore": "^1.13.6"
   }
 }
